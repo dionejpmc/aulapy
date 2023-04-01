@@ -1,4 +1,26 @@
-
+def imprimir_boneco(erros):
+    print(' _____')
+    print('|     |')
+    if erros >= 1:
+        print('|     O')
+    else:
+        print('|')
+    if erros == 2:
+        print('|     |')
+    elif erros == 3:
+        print('|    /|')
+    elif erros >= 4:
+        print('|    /|\\')
+    else:
+        print('|')
+    if erros == 5:
+        print('|    /')
+    elif erros >= 6:
+        print('|    / \\')
+    else:
+        print('|')
+    print('|')
+    print('========')
 def jogar():
 	letras_usadas = set() #Criamos um Conjunto pois não queremos que as letras repetidas sejam exibidas
 	palavra_secreta = input("Digite a palavra para ser descoberta: ")
@@ -15,6 +37,7 @@ def jogar():
 	erros = 0 #definimos o valor de erro para 0
 	print(' '.join(letras_acertadas)) #removemos as aspas e ","... DE: ['_','_'] PARA: _ _
 	while not enforcou and not acertou: #enquanto não enforcou e não acertou, o jogo continua
+		imprimir_boneco(erros)
 		chute = input("Digite uma letra: ") # o jogador pode digitar mais uma letra
 		if chute.upper() in palavra_secreta.upper(): #para letras maiúscula e minúsculas serão aceitas, usamos o método .upper()
 			posicao = 0
